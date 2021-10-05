@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fileshare.w3spaces.com/styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Eczar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Project HCL</title>
+
+  </head>
+  <body class="container bg-dark">
+    <div class="text-center h1 my-2 header-text" style="font-family: 'Eczar', serif;!important;">Homage Urban Müller</div>
+    <nav class="navbar bg-purple-600 rounded drop-shadow" style="--bg-opacity: 1;background-color: #7e3af2!important;">
+        <div class="container-fluid">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center text-sm-center text-md-left text-lg-left text-xl-left">
+                <span class="navbar-brand">
+                    <img src="hcl-logo1.png" width="50px" class="">
+                </span>
+            </div>   
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center">
+                <div class="mb-0 h1 text-white" style="font-family: 'Lobster', cursive;">Project HCL</div>
+            </div>   
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 txte-center text-sm-center text-md-right text-lg-right text-xl-right">
+                <div class="dropdown1">
+                  <a href="#" class="text-white " id="dropdownMenuButton">
+                    Dropdown button
+                  </a>
+                  <div class="dropdown-menu" id="dropdowncontent1">
+                    <a class="dropdown-item" href="#form">Form</a>
+                    <a class="dropdown-item" href="#commands">Commands</a>
+                    <a class="dropdown-item" href="#wibf">What is Brainf</a>
+                    <a class="dropdown-item" href="#hofbf">History of Brainf</a>
+                    <a class="dropdown-item" href="#wihcl">What is HCL</a>
+                    <a class="dropdown-item" href="#"></a>
+                    <a class="dropdown-item" href="#"></a>
+                    <a class="dropdown-item" href="#"></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </nav>   
+    
+    <div class="text-center text-light" id="form">Happy Coding Language</div> 
+
+    <!-- from start -->
+    <div class="drop-shadow p-3 mb-2 bg-white rounded">
+        
+        
+
+        Cells: <div id="allCells"></div><br><br>
+        Present Cell Index: <div id="prsntCell"></div><br><br>
+        Present Value: <div id="prsntVal"></div><br><br>
+        STD Input: <input type="text" id="inptxt"><br><br>
+        Output: <pre id="result"></pre>        
+    </div>
+    <!-- form end -->
+
+    <!-- commands start -->
+    <div class="row mb-2" id="commands">
+        <div class="col-12">
+            <h3 class="text-primary" style="font-family: 'Playfair Display', serif!important;">Commands</h3>
+        </div>
+    </div>
+    <div class="drop-shadow p-3 mb-2 bg-white rounded">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Character</th>
+                    <th scope="col">Meaning</th>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td style="text-align:center"><code>&gt;</code></td>
+                    <td>Increment the data pointer (to point to the next cell to the right).</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td style="text-align:center"><code>&lt;</code></td>
+                    <td>Decrement the data pointer (to point to the next cell to the left).</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td style="text-align:center"><code>+</code></td>
+                    <td>Increment (increase by one) the byte at the data pointer.</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td style="text-align:center"><code>-</code></td>
+                    <td>Decrement (decrease by one) the byte at the data pointer.</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td style="text-align:center"><code>.</code></td>
+                    <td>Output the byte at the data pointer. Printable ASCII will be converted to text.</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td style="text-align:center"><code>,</code></td>
+                    <td>Accept one byte of input, storing its value in the byte at the data pointer.</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td style="text-align:center"><code>[</code></td>
+                    <td>If the byte at the data pointer is zero, then instead of moving the instruction pointer forward to the next command, jump it <i>forward</i> to the command after the <i>matching</i> <code>]</code> command.</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td style="text-align:center"><code>]</code></td>
+                    <td>If the byte at the data pointer is nonzero, then instead of moving the instruction pointer forward to the next command, jump it <i>back</i> to the command after the <i>matching</i> <code>[</code> command.</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td style="text-align:center"><code>:</code></td>
+                    <td>Output the value at the data pointer.</td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td style="text-align:center"><code>&</code></td>
+                    <td>Copy the value at the data pointer.</td>
+                </tr>
+                <tr>
+                    <th scope="row">11</th>
+                    <td style="text-align:center"><code>$</code></td>
+                    <td>Pest the value at the data pointer.</td>
+                </tr>
+                <tr>
+                    <th scope="row">12</th>
+                    <td style="text-align:center"><code>%</code></td>
+                    <td>Performs the add operation at the data pointer's value with the copied value.</td>
+                </tr>
+                <tr>
+                    <th scope="row">13</th>
+                    <td style="text-align:center"><code>^</code></td>
+                    <td>Performs the subtract operation at the data pointer's value with the copied value.</td>
+                </tr>
+                <tr>
+                    <th scope="row">14</th>
+                    <td style="text-align:center"><code>*</code></td>
+                    <td>Performs the multiply operation at the data pointer's value with the copied value.</td>
+                </tr>
+                <tr>
+                    <th scope="row">15</th>
+                    <td style="text-align:center"><code>/</code></td>
+                    <td>Performs the divide operation at the data pointer's value with the copied value.</td>
+                </tr>
+                
+            </tbody>
+        </table>    
+    </div>
+    <!-- commands end -->
+
+    <!-- what is brainf start -->
+    <div class="row mb-2" id="wibf">
+        <div class="col-12">
+            <h3 class="text-primary font1" style="font-family: 'Playfair Display', serif!important;">What is Brainf</h3>
+        </div>
+    </div>
+    <div class="drop-shadow p-3 mb-2 bg-white rounded">
+        <p>
+            <b>Brainfuck</b> is an <a href="https://en.wikipedia.org/wiki/Esoteric_programming_language" title="Esoteric programming language">esoteric programming language</a> created in 1993 by Urban Müller.
+        </p>
+        <p>
+            Notable for its extreme minimalism, the language consists of only eight simple commands, a <a href="https://en.wikipedia.org/wiki/Data_pointer" class="mw-redirect" title="Data pointer">data pointer</a> and an <a href="https://en.wikipedia.org/wiki/Instruction_pointer" class="mw-redirect" title="Instruction pointer">instruction pointer</a>. While it is fully <a href="https://en.wikipedia.org/wiki/Turing_completeness" title="Turing completeness">Turing complete</a>, it is not intended for practical use, but to challenge and amuse <a href="https://en.wikipedia.org/wiki/Programmers" class="mw-redirect" title="Programmers">programmers</a>. Brainfuck simply requires one to break commands into microscopic steps.
+        </p>
+        <p>
+            The language's name is a reference to the slang term <i><a href="https://en.wiktionary.org/wiki/brainfuck" class="extiw" title="wikt:brainfuck">brainfuck</a></i>, which refers to things so complicated or unusual that they exceed the limits of one's understanding.
+        </p>
+    </div>
+    <!-- what is brainf end -->
+
+    <!-- history of brainf start -->
+    <div class="row mb-2" id="hofbf">
+        <div class="col-12">
+            <h3 class="text-primary font1" style="font-family: 'Playfair Display', serif!important;">History of Brainf</h3>
+        </div>
+    </div>
+    <div class="drop-shadow p-3 mb-2 bg-white rounded">
+        <p>
+            In 1992, Urban Müller, a Swiss physics student, took over a small online archive for <a href="https://en.wiktionary.org/wiki/Amiga" title="Amiga">Amiga</a> software. The archive grew more popular, and was soon mirrored around the world. Today, it is the world's largest Amiga archive, known as <a href="https://en.wiktionary.org/wiki/Aminet" title="Aminet">Aminet</a>.
+        </p>
+        <p>
+            Müller designed Brainfuck with the goal of implementing the smallest possible <a href="https://en.wiktionary.org/wiki/Compiler" title="Compiler">compiler</a>, inspired by the 1024-byte compiler for the <a href="https://en.wiktionary.org/wiki/Esoteric_programming_language#FALSE" title="Esoteric programming language">FALSE programming language</a>. Müller's original compiler was implemented in machine language and compiled to a binary with a size of 296 bytes. He uploaded the first Brainfuck compiler to Aminet in 1993. The program came with a "Readme" file, which briefly described the language, and challenged the reader "Who can program anything useful with it? <a href="https://en.wiktionary.org/wiki/Emoticon" title="Emoticon">:)</a>". Müller also included an interpreter and some quite elaborate examples. A second version of the compiler used only 240 bytes.
+        </p>
+    </div>
+    <!-- history of brainf end -->
+
+    <!-- what is hcl start -->
+    <div class="row mb-2" id="wihcl">
+        <div class="col-12">
+            <h3 class="text-primary font1" style="font-family: 'Playfair Display', serif!important;">What is HCL</h3>
+        </div>
+    </div>
+    <div class="drop-shadow p-3 mb-2 bg-white rounded">
+        <p>
+            <b>Happy Coding Language</b> is a simple coded language created in 2021-10-01 by Me.
+        </p>
+        <p>
+            HCL have some advantages. All Brainf commands are valid in HCL. You may see some extra seven commands whereas Brainf have only eight commands. The added commands will be discussed later on.
+        </p>
+        <p>
+            HCL is not a programming language as Brainf. It is made being inspired of Brainf. It is just a pack of characters which is compiled by pure Javascript functions & return a value according to that. Honestly, it have many bugs, I am trying my best to fix them out. It is completly open sourse programe. You can learn from it, you own fix the bugs too. 
+        </p>
+    </div>
+    <!-- what is hcl end -->
+
+    <!-- Footer -->
+    <section class="bg-transparent py-5 border-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center">
+                <a href="https://www.facebook.com/istiak.farhad/"><i class="mx-3 text-white bi-facebook" style="font-size: 2rem;"></i></a>
+                <a href="https://twitter.com/farhadistiak"><i class="mx-3 text-white bi-twitter" style="font-size: 2rem;"></i></a>
+                <a href="https://www.instagram.com/istiak_farhad6/"><i class="mx-3 text-white bi-instagram" style="font-size: 2rem;"></i></a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center">
+              <p class="mb-0 text-muted" style="font-size: 16px;">© This template is made with ❤️ by <a class="text-300" href="https://fileshare.w3spaces.com/" target="_blank"> Telepost</a></p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+  
+
+
+
+
+<script>
+    var cells = [0];
+    var presentCell = 0;
+    var presentValue = 0;
+
+    var charValues = '';
+    var numValues = '';
+
+    var allTxt = document.getElementById("inptxt").value.split("");
+    var inputs = allTxt.map(function(currentValue, index) {
+        return currentValue.charCodeAt(0);
+    });
+    // console.log(allTxt)
+    // // allTxt
+    
+    // console.log(inputs)
+
+    var inpsCell = 0;
+
+    var result = "";
+    
+
+    
+
+    function hcl(a) {
+        for (var i = 0; i < a.length; i++) {
+            const ele = a[i];
+            
+            if (ele == ">") {
+                if (cells.length-1 == presentCell) {
+                    cells.push(0);
+                }
+                presentCell++;
+            }
+
+            if (ele == "<" && presentCell > 0) {
+                presentCell--;
+            }
+
+            if (ele == "+") {
+                // presentValue = cells[presentCell];
+                cells[presentCell] += 1;
+            }
+
+            if (ele == "-") {
+                // presentValue = cells[presentCell];
+                cells[presentCell] -= 1;
+            }
+
+            if (ele == ".") {
+                //console.log(String.fromCharCode(cells[presentCell])); // print ascii to char
+
+                result += String.fromCharCode(cells[presentCell]);
+                document.getElementById("result").innerHTML += String.fromCharCode(cells[presentCell]);
+            }
+
+            if (ele == ":") {
+                // numValues
+                // console.log(cells[presentCell]); // print ascii num
+
+                result += cells[presentCell];
+                document.getElementById("result").innerHTML += cells[presentCell];                
+            }
+
+            if (ele == "&") {
+                presentValue = cells[presentCell];
+            }
+
+            if (ele == "$") {
+                cells[presentCell] = presentValue;
+            }
+
+            if (ele == "%") {
+                cells[presentCell] += presentValue;
+            }
+
+            if (ele == "^") {
+                cells[presentCell] -= presentValue;
+            }
+
+            if (ele == "*") {
+                cells[presentCell] *= presentValue;
+            }
+
+            if (ele == "/") {
+                cells[presentCell] /= presentValue;
+            }
+
+            if (ele == "[" && cells[presentCell] == 0) {
+                let fstbrc = 1;
+                let lstbrc = 0;
+                
+                while (fstbrc > 0) {
+                    i++;
+                    if (a[i] == "[") {
+                        fstbrc++;
+                    }
+                    if (a[i] == "]") {
+                        fstbrc--;
+                    }                    
+                }
+            }
+
+            if (ele == "]" && cells[presentCell] > 0) {
+                let fstbrc = 1;
+
+                while (fstbrc > 0) {
+                    i--;
+                    if (a[i] == "[") {
+                        fstbrc--;
+                    }
+                    if (a[i] == "]") {
+                        fstbrc++;
+                    } 
+                }
+
+
+
+
+
+
+                // while ((a[i] != "[")) {
+                //     i--;
+                // }
+
+            }
+
+            if (ele == ",") {
+                cells[presentCell] = inputs[inpsCell];
+                inpsCell++;
+            }
+        }
+
+        document.getElementById("allCells").innerHTML = "[ "+cells+" ]";
+        document.getElementById("prsntCell").innerHTML = presentCell;
+        document.getElementById("prsntVal").innerHTML = presentValue;
+
+        console.log(result);
+
+    }
+</script>
